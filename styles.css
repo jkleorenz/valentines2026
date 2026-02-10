@@ -1,0 +1,233 @@
+/* Valentine theme from attached image: hot pink bg, soft pink heart, black bold text */
+
+:root {
+  --pink-bg: #e91e8c;
+  --pink-heart: #f8b4d4;
+  --pink-light: #ffcce0;
+  --pink-dark: #c2185b;
+  --text-black: #1a1a1a;
+  --white: #fff;
+  --blue-suit: #87ceeb;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Fredoka", sans-serif;
+  background: var(--pink-bg);
+  color: var(--text-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scattered small hearts background */
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--pink-light) 0%, transparent 8%),
+    radial-gradient(circle at 90% 80%, var(--pink-light) 0%, transparent 8%),
+    radial-gradient(circle at 50% 50%, transparent 0%, transparent 12%);
+  opacity: 0.6;
+}
+
+.hearts-bg::before,
+.hearts-bg::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow:
+    24px 12px 0 var(--pink-light),
+    48px 64px 0 var(--pink-heart),
+    80px 24px 0 var(--pink-light),
+    120px 90px 0 var(--pink-heart),
+    160px 40px 0 var(--pink-light),
+    200px 120px 0 var(--pink-heart),
+    20px 180px 0 var(--pink-heart),
+    60px 200px 0 var(--pink-light),
+    140px 160px 0 var(--pink-heart),
+    180px 220px 0 var(--pink-light);
+  animation: float 8s ease-in-out infinite;
+}
+
+.hearts-bg::after {
+  right: 0;
+  left: auto;
+  box-shadow:
+    -24px 12px 0 var(--pink-heart),
+    -48px 64px 0 var(--pink-light),
+    -80px 24px 0 var(--pink-heart),
+    -120px 90px 0 var(--pink-light),
+    -160px 40px 0 var(--pink-heart),
+    -200px 120px 0 var(--pink-light);
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Main card */
+.card {
+  position: relative;
+  max-width: 420px;
+  width: 90%;
+  padding: 2rem 1.5rem 2.5rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Large soft pink heart behind content */
+.heart-backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  background: var(--pink-heart);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.95;
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.3);
+}
+
+/* Question text – bold, black, two lines */
+.question {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-black);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.question-top {
+  margin-bottom: 0.5rem;
+}
+
+.question-bottom {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero: cute gentleman cat (SVG) */
+.hero {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-illustration {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 8px 16px var(--shadow));
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  position: relative;
+  min-height: 56px;
+  overflow: visible;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 2;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--text-black);
+  outline-offset: 3px;
+}
+
+.btn-yes {
+  background: linear-gradient(180deg, #4caf50 0%, #2e7d32 100%);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(46, 125, 50, 0.4);
+}
+
+.btn-yes:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.5);
+}
+
+.btn-no {
+  background: linear-gradient(180deg, #f44336 0%, #c62828 100%);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(198, 40, 40, 0.4);
+  position: relative;
+  transition: transform 0.12s ease-out;
+}
+
+/* Response message after Yes */
+.response {
+  margin-top: 1.25rem;
+  font-size: 1.35rem;
+  color: var(--pink-dark);
+  font-weight: 600;
+  min-height: 2rem;
+}
+
+.response.hidden {
+  visibility: hidden;
+}
+
+.response:not(.hidden) {
+  animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .question {
+    font-size: 1.35rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}

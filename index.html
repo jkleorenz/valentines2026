@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you be my Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <main class="card">
+    <div class="heart-backdrop"></div>
+
+    <h1 class="question question-top">WILL YOU BE</h1>
+
+    <figure class="hero" aria-label="Cute gentleman cat with roses">
+      <svg class="cat-illustration" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <!-- Ears -->
+        <path d="M65 55 L55 25 L75 50 Z" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <path d="M135 55 L145 25 L125 50 Z" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <!-- Head -->
+        <ellipse cx="100" cy="85" rx="52" ry="50" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <!-- Eyes -->
+        <ellipse cx="82" cy="82" rx="8" ry="10" fill="#1a1a1a"/>
+        <ellipse cx="118" cy="82" rx="8" ry="10" fill="#1a1a1a"/>
+        <!-- Nose -->
+        <ellipse cx="100" cy="95" rx="6" ry="5" fill="#ffb347"/>
+        <!-- Whiskers left -->
+        <path d="M55 88 Q45 86 35 85" stroke="#333" stroke-width="1" fill="none"/>
+        <path d="M55 92 Q44 92 33 92" stroke="#333" stroke-width="1" fill="none"/>
+        <path d="M55 96 Q45 98 35 100" stroke="#333" stroke-width="1" fill="none"/>
+        <!-- Whiskers right -->
+        <path d="M145 88 Q155 86 165 85" stroke="#333" stroke-width="1" fill="none"/>
+        <path d="M145 92 Q156 92 167 92" stroke="#333" stroke-width="1" fill="none"/>
+        <path d="M145 96 Q155 98 165 100" stroke="#333" stroke-width="1" fill="none"/>
+        <!-- Blush -->
+        <ellipse cx="68" cy="100" rx="10" ry="5" fill="#ffb6c1" opacity="0.8"/>
+        <ellipse cx="132" cy="100" rx="10" ry="5" fill="#ffb6c1" opacity="0.8"/>
+        <!-- Suit jacket -->
+        <path d="M55 115 L52 195 L148 195 L145 115 Q100 105 55 115Z" fill="#87CEEB" stroke="#5ba3c6" stroke-width="2"/>
+        <!-- Collar / shirt -->
+        <path d="M75 118 L100 128 L125 118 L120 115 L100 122 L80 115 Z" fill="#fff" stroke="#ddd" stroke-width="1"/>
+        <!-- Bow tie -->
+        <ellipse cx="88" cy="122" rx="12" ry="8" fill="#1a1a1a"/>
+        <ellipse cx="112" cy="122" rx="12" ry="8" fill="#1a1a1a"/>
+        <circle cx="100" cy="122" r="4" fill="#1a1a1a"/>
+        <!-- Buttons -->
+        <circle cx="100" cy="148" r="4" fill="#ffd700"/>
+        <circle cx="100" cy="168" r="4" fill="#ffd700"/>
+        <!-- Pocket square -->
+        <path d="M125 130 L135 130 L135 142 L125 142 Z" fill="#d2b48c" stroke="#b8956a" stroke-width="1"/>
+        <!-- Body / legs -->
+        <path d="M60 195 L65 235 L85 235 L82 195" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <path d="M140 195 L135 235 L115 235 L118 195" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <!-- Bouquet: wrap -->
+        <path d="M35 140 L25 200 L45 200 Z" fill="#fff" stroke="#ffcce0" stroke-width="1.5"/>
+        <!-- Roses -->
+        <circle cx="32" cy="155" r="8" fill="#ff69b4" stroke="#e91e8c" stroke-width="1"/>
+        <circle cx="28" cy="172" r="7" fill="#ff85c1" stroke="#e91e8c" stroke-width="1"/>
+        <circle cx="38" cy="175" r="7" fill="#ff69b4" stroke="#e91e8c" stroke-width="1"/>
+        <circle cx="30" cy="188" r="6" fill="#ff85c1" stroke="#e91e8c" stroke-width="1"/>
+        <!-- Leaves -->
+        <path d="M22 165 Q18 175 25 182" stroke="#2e7d32" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M42 178 Q48 188 45 198" stroke="#2e7d32" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </figure>
+
+    <h1 class="question question-bottom">MY VALENTINE ?</h1>
+
+    <div class="actions">
+      <button type="button" class="btn btn-yes" id="btnYes">Yes</button>
+      <button type="button" class="btn btn-no" id="btnNo">No</button>
+    </div>
+
+    <p class="response hidden" id="response"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
